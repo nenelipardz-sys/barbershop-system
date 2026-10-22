@@ -195,7 +195,7 @@ INSERT INTO settings (setting_key, setting_value) VALUES
 ('slot_interval', '30');
 
 INSERT INTO users (id, name, username, email, phone, password, role, status, avatar, created_at) VALUES
-(1, 'Juan Dela Cruz', 'admin1', 'owner@lumietalent.ph', '0917 123 4567', 'y$AYauV.EnbZ2odI0zuzNed.L9PnosvK44TMQJaOlVJOfhpID5lvaJW', 'owner', 'active', 'assets/img/avatars/juan.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 200 DAY), '09:00:00')),
+(1, 'Juan Dela Cruz', 'admin1', 'owner@lumietalent.ph', '0917 123 4567', '$2y$10$a2fLoHGzp9tSszrXCY14OOGY/z5LHWOV.5NzCREeT1iNhYbFlUdMu', 'owner', 'active', 'assets/img/avatars/juan.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 200 DAY), '09:00:00')),
 (2, 'Jay Santos', 'jay', 'jay@lumietalent.ph', '0917 300 0001', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/jay.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 190 DAY), '09:00:00')),
 (3, 'Mark Santos', 'mark', 'mark@lumietalent.ph', '0917 300 0002', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/mark.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 190 DAY), '09:00:00')),
 (4, 'Luis Torres', 'luis', 'luis@lumietalent.ph', '0917 300 0003', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/luis.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 180 DAY), '09:00:00')),
