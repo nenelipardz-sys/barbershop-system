@@ -1,0 +1,12 @@
+# Files uploaded through the app (avatars, service photos)
+uploads/avatars/*
+uploads/services/*
+!uploads/avatars/.gitkeep
+!uploads/services/.gitkeep
+
+# OS / editor files
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
