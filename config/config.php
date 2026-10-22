@@ -11,7 +11,7 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 
 define('APP_NAME', 'Cut & Schedule');
-define('APP_TAGLINE', 'Barber Shop Management System');
+define('APP_TAGLINE', 'Barber Shop');
 define('APP_TIMEZONE', 'Asia/Manila');
 
 // Discount rate applied to Senior Citizen / PWD bookings (Philippine law: 20%).

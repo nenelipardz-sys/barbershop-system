@@ -91,7 +91,7 @@ p { margin: 0; }
   margin-top: 10px; font-family: var(--serif); font-weight: 600; font-size: 19px; letter-spacing: .02em;
   color: #f1ead9;
 }
-.brand-sub { margin-top: 3px; font-size: 8.2px; letter-spacing: .2em; text-transform: uppercase; color: #cfc6b2; font-weight: 600; }
+.brand-sub { margin-top: 4px; font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: #cfc6b2; font-weight: 600; }
 .nav { display: flex; flex-direction: column; gap: 6px; }
 .nav-link {
   display: flex; align-items: center; gap: 14px;

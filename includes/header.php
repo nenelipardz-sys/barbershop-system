@@ -5,6 +5,8 @@
 $role = $user->getRole();
 $unread = Notification::unreadCount($user->getId());
 $notifications = Notification::forUser($user->getId(), 8);
+// The client logo opens the shop landing page; owner/staff logos go home.
+$brandUrl = $role === 'client' ? 'client/about.php' : $user->homeUrl();
 $profileUrl = ['owner' => 'owner/settings.php', 'staff' => 'staff/profile.php', 'client' => 'client/profile.php'][$role];
 ?>
 <!doctype html>
@@ -31,10 +33,10 @@ $profileUrl = ['owner' => 'owner/settings.php', 'staff' => 'staff/profile.php', 
 <body class="app role-<?= e($role) ?>" data-base="<?= e(BASE_URL) ?>"<?= !empty($fitScreen) ? ' data-fit' : '' ?>>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <a class="brand" href="<?= url($user->homeUrl()) ?>">
+    <a class="brand" href="<?= url($brandUrl) ?>">
       <?= brand_emblem(58) ?>
       <span class="brand-name">CUT &amp; SCHEDULE</span>
-      <span class="brand-sub">Barber Shop Management System</span>
+      <span class="brand-sub">Barber Shop</span>
     </a>
     <nav class="nav">
       <?php foreach (nav_items($role) as [$key, $label, $href, $ico]): ?>
@@ -58,7 +60,7 @@ $profileUrl = ['owner' => 'owner/settings.php', 'staff' => 'staff/profile.php', 
 
   <div class="main">
     <header class="mobile-header">
-      <a class="mh-brand" href="<?= url($user->homeUrl()) ?>">
+      <a class="mh-brand" href="<?= url($brandUrl) ?>">
         <?= brand_emblem(44) ?>
         <span class="mh-sep"></span>
         <span><strong>CUT &amp; SCHEDULE</strong><small><?= e(portal_label($role)) ?></small></span>

@@ -4,7 +4,7 @@
 --  Database schema + demo data (dates are relative to the import date)
 --
 --  Demo accounts:
---    Owner  : owner  / owner123
+--    Owner  : admin1 / admin2026
 --    Staff  : mark   / staff123   (also jay, luis)
 --    Client : arizza / client123  (also paulo)
 -- =====================================================================
@@ -163,6 +163,16 @@ CREATE TABLE notifications (
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
+-- Newsletter subscribers ("Stay in the know" on the client landing page)
+-- ---------------------------------------------------------------------
+CREATE TABLE subscribers (
+  id         INT AUTO_INCREMENT PRIMARY KEY,
+  name       VARCHAR(100) NOT NULL,
+  email      VARCHAR(150) NOT NULL UNIQUE,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
 -- Shop settings
 -- ---------------------------------------------------------------------
 CREATE TABLE settings (
@@ -185,7 +195,7 @@ INSERT INTO settings (setting_key, setting_value) VALUES
 ('slot_interval', '30');
 
 INSERT INTO users (id, name, username, email, phone, password, role, status, avatar, created_at) VALUES
-(1, 'Juan Dela Cruz', 'owner', 'owner@lumietalent.ph', '0917 123 4567', '$2y$10$qCCzm3JpDf6OzOdPp34d3.sIfu6UEC9dzq5ot7evUmCsw7wO/w4BK', 'owner', 'active', 'assets/img/avatars/juan.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 200 DAY), '09:00:00')),
+(1, 'Juan Dela Cruz', 'admin1', 'owner@lumietalent.ph', '0917 123 4567', 'y$AYauV.EnbZ2odI0zuzNed.L9PnosvK44TMQJaOlVJOfhpID5lvaJW', 'owner', 'active', 'assets/img/avatars/juan.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 200 DAY), '09:00:00')),
 (2, 'Jay Santos', 'jay', 'jay@lumietalent.ph', '0917 300 0001', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/jay.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 190 DAY), '09:00:00')),
 (3, 'Mark Santos', 'mark', 'mark@lumietalent.ph', '0917 300 0002', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/mark.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 190 DAY), '09:00:00')),
 (4, 'Luis Torres', 'luis', 'luis@lumietalent.ph', '0917 300 0003', '$2y$10$gPp3.57g90t3KLZV2S/TlupfBvW2hnn5eF9w37YGNMQmltUk19pYu', 'staff', 'active', 'assets/img/avatars/luis.jpg', TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 180 DAY), '09:00:00')),

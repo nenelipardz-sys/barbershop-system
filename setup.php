@@ -66,7 +66,7 @@ try {
 </head>
 <body>
   <div class="setup">
-    <div class="brand"><?= brand_emblem(64) ?><span class="brand-name">CUT &amp; SCHEDULE</span><span class="brand-sub">Barber Shop Management System</span></div>
+    <div class="brand"><?= brand_emblem(64) ?><span class="brand-name">CUT &amp; SCHEDULE</span><span class="brand-sub">Barber Shop</span></div>
     <div class="card">
       <h1>Database Setup</h1>
       <p class="muted">Creates the <b><?= e(DB_NAME) ?></b> database on <b><?= e(DB_HOST) ?></b> and loads the demo shop data.</p>
@@ -77,7 +77,7 @@ try {
       <?php if ($installed): ?>
         <table class="acct">
           <tr><th>Role</th><th>Username</th><th>Password</th></tr>
-          <tr><td>Owner</td><td>owner</td><td>owner123</td></tr>
+          <tr><td>Owner</td><td>admin1</td><td>admin2026</td></tr>
           <tr><td>Staff</td><td>mark / jay / luis</td><td>staff123</td></tr>
           <tr><td>Client</td><td>arizza / paulo</td><td>client123</td></tr>
         </table>
