@@ -265,7 +265,9 @@
 
     async function load(force) {
       const barber = get('barber_id')?.value || '';
-      const service = get('service_id')?.value || '';
+      // Several services (checkboxes on the booking page) are booked back-to-back.
+      const multi = $$('[name="service_ids[]"]:checked', form).map((i) => i.value);
+      const service = multi.length ? multi.join(',') : (get('service_id')?.value || '');
       const date = get('appointment_date')?.value || '';
       const exclude = form.querySelector('[name="appointment_id"]')?.value || '';
       const key = [barber, service, date, exclude].join('|');
@@ -283,7 +285,7 @@
       msg.textContent = 'Loading available times…';
       msg.hidden = false;
       try {
-        const res = await fetch(`${BASE}/api/slots.php?barber_id=${barber}&service_id=${service}&date=${date}&exclude=${exclude}`, { headers: { Accept: 'application/json' } });
+        const res = await fetch(`${BASE}/api/slots.php?barber_id=${barber}&service_ids=${service}&date=${date}&exclude=${exclude}`, { headers: { Accept: 'application/json' } });
         const d = await res.json();
         if (!d.ok) { msg.textContent = d.error || 'No available times.'; return; }
         if (!d.slots.length) { msg.textContent = d.message || 'No time slots on this date.'; return; }
@@ -310,7 +312,7 @@
       if (b && !b.disabled) select(b);
     });
     form.addEventListener('change', (e) => {
-      if (['barber_id', 'service_id', 'appointment_date'].includes(e.target.name)) load();
+      if (['barber_id', 'service_id', 'service_ids[]', 'appointment_date'].includes(e.target.name)) load();
     });
     form.addEventListener('submit', (e) => {
       if (!hidden.value) {

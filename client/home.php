@@ -35,7 +35,6 @@ $upcoming = Database::one(
 $visits = $user->profile()->visits(3);
 
 $pageTitle = 'Home';
-$fitScreen = true; // whole dashboard fits on one screen, like the prototype
 $active = 'home';
 require __DIR__ . '/../includes/header.php';
 ?>

@@ -10,7 +10,18 @@ if (!$user) {
 }
 
 $barber = Barber::findBarber((int) input('barber_id'));
-$service = Service::find((int) input('service_id'));
+
+// One service (service_id) or several booked back-to-back (service_ids=1,2,3).
+$service = null;
+$ids = array_values(array_filter(array_map('intval', explode(',', (string) input('service_ids', input('service_id'))))));
+$picked = array_filter(array_map(fn($id) => Service::find($id), $ids));
+if (count($picked) === 1) {
+    $service = reset($picked);
+} elseif ($picked) {
+    $service = new Service();
+    $service->name = implode(' + ', array_map(fn($s) => $s->name, $picked));
+    $service->duration = array_sum(array_map(fn($s) => $s->duration, $picked));
+}
 $date = valid_date(input('date'));
 $exclude = (int) input('exclude') ?: null;
 

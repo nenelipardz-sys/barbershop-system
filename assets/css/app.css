@@ -748,3 +748,50 @@ body[data-fit] .inner { padding: 12px 14px; }
 @media (max-width: 991px) {
   body[data-fit] .card { padding: 16px; }
 }
+
+/* ---------- Larger service cards (client home + booking) ---------- */
+.svc-cards { gap: 16px; }
+.svc-card { gap: 18px; padding: 16px 18px; }
+.svc-card .svc-img { width: 84px; height: 84px; border-radius: 10px; }
+.svc-card strong { font-size: 17px; }
+.svc-card .price { font-size: 15.5px; margin-top: 5px; color: var(--ink-2); font-weight: 500; }
+.svc-card .dur { font-size: 14.5px; }
+.svc-list .svc-card .svc-img { width: 64px; height: 64px; }
+
+/* ---------- Booking page: bigger, multi-select services ---------- */
+.book-page .step-title { font-size: 19px; }
+.book-page .step-title::before { width: 30px; height: 30px; font-size: 14px; }
+.step-hint { margin: -6px 0 16px; color: var(--muted); font-size: 14px; }
+.book-page .svc-cards { grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); }
+.book-page .svc-card { position: relative; padding: 18px; min-height: 122px; }
+.book-page .svc-card .svc-img { width: 88px; height: 88px; }
+.book-page .svc-card strong { font-size: 18px; padding-right: 26px; }
+.book-page .svc-card .price { font-size: 16px; }
+.book-page .svc-card .dur { font-size: 15px; }
+.svc-check {
+  position: absolute; top: 12px; right: 12px; width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--gold-grad); color: #1d1a12;
+  opacity: 0; transform: scale(.6); transition: opacity .18s, transform .18s;
+}
+.choice input:checked + .svc-card .svc-check { opacity: 1; transform: none; }
+.book-page .barber-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.book-page .barber-card { padding: 22px 14px 18px; }
+.book-page .barber-card strong { font-size: 18px; }
+.book-page .barber-card small { font-size: 14px; }
+.book-page .barber-card .rating { font-size: 15px; }
+.book-page .field label, .book-page .label { font-size: 14px; }
+.book-page .input { height: 48px; font-size: 15.5px; }
+.book-page textarea.input { height: auto; min-height: 100px; }
+.book-page .hint { font-size: 13.5px; }
+.book-page .slots { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+.book-page .slot { height: 46px; font-size: 15px; }
+.book-page .slots-msg { font-size: 14.5px; }
+.book-page .discount-opts .choice span { padding: 16px; font-size: 16px; }
+.book-page .discount-opts .choice span small { font-size: 13.5px; }
+.book-page .summary .card-head h2 { font-size: 19px; }
+.book-page .summary-row { font-size: 15.5px; padding: 11px 0; }
+.book-page .summary-total strong { font-size: 30px; }
+.summary-services span:last-child { display: flex; flex-direction: column; gap: 5px; }
+.sum-svc { display: flex; justify-content: flex-end; gap: 10px; }
+.sum-svc em { font-style: normal; color: var(--muted); font-weight: 500; }
+.summary-note { font-size: 13.5px; }
