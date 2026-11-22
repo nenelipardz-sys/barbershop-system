@@ -10,3 +10,6 @@ desktop.ini
 .DS_Store
 .vscode/
 .idea/
+
+# Composer dependencies (run `composer install`)
+/vendor/

@@ -18,6 +18,11 @@ if (BASE_URL_OVERRIDE !== null) {
     define('BASE_URL', rtrim(str_replace('\\', '/', $dir), '/'));
 }
 
+// Composer autoloader (run `composer install`); the manual loader below is a fallback.
+if (is_file(APP_ROOT . '/vendor/autoload.php')) {
+    require_once APP_ROOT . '/vendor/autoload.php';
+}
+
 spl_autoload_register(function (string $class) {
     $map = ['StandardRate' => 'Fee', 'SeniorDiscount' => 'Fee', 'PwdDiscount' => 'Fee'];
     $file = APP_ROOT . '/classes/' . ($map[$class] ?? $class) . '.php';
