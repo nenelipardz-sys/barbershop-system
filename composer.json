@@ -5,17 +5,36 @@
     "license": "proprietary",
     "require": {
         "php": ">=8.0",
-        "ext-pdo": "*",
-        "ext-pdo_mysql": "*",
-        "ext-mbstring": "*"
+        "ext-intl": "*",
+        "ext-mbstring": "*",
+        "ext-mysqli": "*",
+        "codeigniter4/framework": "4.4.8"
     },
     "autoload": {
         "classmap": [
-            "classes/"
+            "app/Models/",
+            "app/Libraries/"
+        ],
+        "exclude-from-classmap": [
+            "**/Database/Migrations/**"
         ]
     },
     "config": {
         "optimize-autoloader": true,
-        "sort-packages": true
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "policy": {
+            "advisories": {
+                "ignore-id": {
+                    "PKSA-kcc6-gffv-vchj": "Only fixed in CI 4.5+/4.7+ (needs PHP 8.1/8.2); XAMPP here runs PHP 8.0. App does not use the affected CI features.",
+                    "PKSA-t8h5-ngj8-z43w": "See PKSA-kcc6-gffv-vchj",
+                    "PKSA-ykyc-889h-7jxf": "See PKSA-kcc6-gffv-vchj",
+                    "PKSA-kcm9-w3rf-jxsk": "See PKSA-kcc6-gffv-vchj",
+                    "PKSA-217t-qqjr-nkt3": "See PKSA-kcc6-gffv-vchj",
+                    "PKSA-7ybs-j1bv-y5mc": "See PKSA-kcc6-gffv-vchj",
+                    "PKSA-qbjf-dc24-wrff": "See PKSA-kcc6-gffv-vchj"
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,9 @@
+# Send every request to CodeIgniter's public/ folder (index.php, assets, uploads).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    Require all denied
+</IfModule>

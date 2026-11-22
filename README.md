@@ -4,6 +4,7 @@ A system for our barber shop where clients can book appointments and the owner a
 
 ## Frameworks / Libraries
 
+- CodeIgniter 4 (PHP framework)
 - PHP 8 (using XAMPP)
 - Composer
 - MySQL
@@ -11,15 +12,22 @@ A system for our barber shop where clients can book appointments and the owner a
 ## How to run it
 
 1. Install XAMPP and Composer. When Composer asks where PHP is, pick `C:\xampp\php\php.exe`.
-2. Put the project folder inside `C:\xampp\htdocs`.
-3. Open a terminal in the project folder and type:
+2. In `C:\xampp\php\php.ini`, remove the `;` in front of `extension=intl`, then restart Apache.
+3. Put the project folder inside `C:\xampp\htdocs`.
+4. Open a terminal in the project folder and type:
 
    ```
    composer install
    ```
 
-4. Open XAMPP and start Apache and MySQL.
-5. Go to `http://localhost/barber/setup.php` in your browser to make the database. You can also just import `database/cut_schedule.sql` in phpMyAdmin.
-6. If your MySQL has a password, change it in `config/config.php`.
+5. Open XAMPP and start Apache and MySQL.
+6. Go to `http://localhost/barber/setup` in your browser to make the database. You can also just import `database/cut_schedule.sql` in phpMyAdmin.
+7. If your MySQL has a password, change it in `app/Config/Database.php`.
 
-If you add a new file in the `classes` folder, run `composer dump-autoload`.
+## Where things are
+
+- `app/Controllers` - the pages (owner, staff, client, api)
+- `app/Models` - the classes like User, Appointment, Service
+- `app/Views` - the HTML of each page
+- `app/Config/Routes.php` - the list of page links
+- `public` - css, js, images and uploaded photos

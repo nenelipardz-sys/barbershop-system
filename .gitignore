@@ -1,8 +1,24 @@
 # Files uploaded through the app (avatars, service photos)
-uploads/avatars/*
-uploads/services/*
-!uploads/avatars/.gitkeep
-!uploads/services/.gitkeep
+public/uploads/avatars/*
+public/uploads/services/*
+!public/uploads/avatars/.gitkeep
+!public/uploads/services/.gitkeep
+
+# Composer dependencies (run `composer install`)
+/vendor/
+
+# CodeIgniter local settings and runtime files
+.env
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+writable/debugbar/*
+!writable/debugbar/.gitkeep
 
 # OS / editor files
 Thumbs.db
@@ -10,6 +26,3 @@ desktop.ini
 .DS_Store
 .vscode/
 .idea/
-
-# Composer dependencies (run `composer install`)
-/vendor/

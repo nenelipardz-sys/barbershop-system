@@ -1613,14 +1613,14 @@ INSERT INTO favorites (client_id, fav_type, ref_id) VALUES
 (1, 'service', 1), (1, 'barber', 3), (7, 'barber', 3);
 
 INSERT INTO notifications (user_id, title, message, link, is_read, created_at) VALUES
-(1, 'New client registered', 'Rafael Dela Cruz joined as a new client.', 'owner/clients.php', 0, NOW() - INTERVAL 2 MINUTE),
-(1, 'Appointment completed', 'Jose Martinez — Haircut was marked completed.', 'owner/appointments.php', 0, NOW() - INTERVAL 15 MINUTE),
-(1, 'New booking request', 'Sofia Garcia requested Hot Towel Shave with Luis Torres.', 'owner/appointments.php?status=pending', 0, NOW() - INTERVAL 2 HOUR),
-(1, 'Service updated', 'Hair Treatment details were updated.', 'owner/services.php', 1, NOW() - INTERVAL 1 DAY),
-(3, 'New appointment assigned', 'Ana Santos booked Hair Treatment with you today at 1:00 PM.', 'staff/appointments.php', 0, NOW() - INTERVAL 30 MINUTE),
-(3, 'Schedule reminder', 'You have 5 appointments today.', 'staff/schedule.php', 1, NOW() - INTERVAL 3 HOUR),
-(2, 'Schedule reminder', 'You have 4 appointments today.', 'staff/schedule.php', 0, NOW() - INTERVAL 3 HOUR),
-(5, 'Appointment confirmed', 'Your Haircut with Mark Santos has been confirmed.', 'client/appointments.php', 0, NOW() - INTERVAL 1 HOUR),
-(5, 'Welcome back!', 'Book your next appointment anytime.', 'client/book.php', 1, NOW() - INTERVAL 2 DAY);
+(1, 'New client registered', 'Rafael Dela Cruz joined as a new client.', 'owner/clients', 0, NOW() - INTERVAL 2 MINUTE),
+(1, 'Appointment completed', 'Jose Martinez — Haircut was marked completed.', 'owner/appointments', 0, NOW() - INTERVAL 15 MINUTE),
+(1, 'New booking request', 'Sofia Garcia requested Hot Towel Shave with Luis Torres.', 'owner/appointments?status=pending', 0, NOW() - INTERVAL 2 HOUR),
+(1, 'Service updated', 'Hair Treatment details were updated.', 'owner/services', 1, NOW() - INTERVAL 1 DAY),
+(3, 'New appointment assigned', 'Ana Santos booked Hair Treatment with you today at 1:00 PM.', 'staff/appointments', 0, NOW() - INTERVAL 30 MINUTE),
+(3, 'Schedule reminder', 'You have 5 appointments today.', 'staff/schedule', 1, NOW() - INTERVAL 3 HOUR),
+(2, 'Schedule reminder', 'You have 4 appointments today.', 'staff/schedule', 0, NOW() - INTERVAL 3 HOUR),
+(5, 'Appointment confirmed', 'Your Haircut with Mark Santos has been confirmed.', 'client/appointments', 0, NOW() - INTERVAL 1 HOUR),
+(5, 'Welcome back!', 'Book your next appointment anytime.', 'client/book', 1, NOW() - INTERVAL 2 DAY);
 
 SET FOREIGN_KEY_CHECKS = 1;
